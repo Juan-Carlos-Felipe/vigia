@@ -35,7 +35,7 @@ document.querySelectorAll('[data-camera-preview]').forEach((preview) => {
 
     async function loadDevices() {
         if (!navigator.mediaDevices?.getUserMedia) {
-            message.textContent = 'Tu navegador no permite vista previa de camara.';
+            message.textContent = 'Tu navegador no permite vista previa de cámara.';
             startButton.disabled = true;
             return;
         }
@@ -48,18 +48,18 @@ document.querySelectorAll('[data-camera-preview]').forEach((preview) => {
             cameras.forEach((camera, index) => {
                 const option = document.createElement('option');
                 option.value = camera.deviceId;
-                option.textContent = camera.label || `Camara ${index + 1}`;
+                option.textContent = camera.label || `Cámara ${index + 1}`;
                 select.appendChild(option);
             });
 
             if (!cameras.length) {
                 const option = document.createElement('option');
-                option.textContent = 'Camara predeterminada';
+                option.textContent = 'Cámara predeterminada';
                 option.value = '';
                 select.appendChild(option);
             }
         } catch (error) {
-            message.textContent = 'No se pudo listar camaras. Intenta iniciar la vista previa.';
+            message.textContent = 'No se pudo listar cámaras. Intenta iniciar la vista previa.';
         }
     }
 
@@ -88,10 +88,10 @@ document.querySelectorAll('[data-camera-preview]').forEach((preview) => {
             empty.hidden = true;
             startButton.disabled = true;
             stopButton.disabled = false;
-            message.textContent = 'Camara activa en tiempo real.';
+            message.textContent = 'Cámara activa en tiempo real.';
             await loadDevices();
         } catch (error) {
-            message.textContent = 'No se pudo abrir la camara. Revisa permisos o si otra app la esta usando.';
+            message.textContent = 'No se pudo abrir la cámara. Revisa permisos o si otra app la está usando.';
         }
     }
 
@@ -117,7 +117,7 @@ document.querySelectorAll('[data-person-capture]').forEach((capture) => {
             video.hidden = false;
             preview.hidden = true;
             shotButton.disabled = false;
-            message.textContent = 'Camara lista. Mira de frente y captura la foto.';
+            message.textContent = 'Cámara lista. Mira de frente y captura la foto.';
         } catch (error) {
             message.textContent = 'No se pudo abrir la webcam para registrar la foto.';
         }

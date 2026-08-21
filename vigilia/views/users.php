@@ -13,7 +13,7 @@
         <label>Email <input name="email" type="email" required></label>
         <label>Rol
             <select name="role">
-                <option value="inspector">Inspector o enfermeria</option>
+                <option value="inspector">Inspector o enfermería</option>
                 <option value="admin">Administrador</option>
             </select>
         </label>

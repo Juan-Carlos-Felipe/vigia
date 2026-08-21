@@ -18,12 +18,12 @@ $watcher = watcher_status();
 ?>
 <header class="topbar">
     <div>
-        <span class="eyebrow">Operacion en tiempo real</span>
+        <span class="eyebrow">Operación en tiempo real</span>
         <h1>Panel de vigilancia</h1>
     </div>
     <div class="actions">
         <form method="post" action="index.php?route=watcher">
-            <button class="primary">Activar camara</button>
+            <button class="primary">Activar cámara</button>
         </form>
         <a class="ghost" href="index.php?route=incidents">Ver historial</a>
     </div>
@@ -37,7 +37,7 @@ $watcher = watcher_status();
     <article><span>Alertas abiertas</span><strong><?= $stats['open'] ?></strong></article>
     <article><span>Eventos hoy</span><strong><?= $stats['today'] ?></strong></article>
     <article><span>Personas registradas</span><strong><?= $stats['people'] ?></strong></article>
-    <article><span>Camaras activas</span><strong><?= $stats['cameras'] ?></strong></article>
+    <article><span>Cámaras activas</span><strong><?= $stats['cameras'] ?></strong></article>
 </section>
 
 <section class="panel watcher-panel">
@@ -49,21 +49,21 @@ $watcher = watcher_status();
         <?php endif; ?>
     </div>
     <form method="post" action="index.php?route=watcher">
-        <button class="primary">Activar camara</button>
+        <button class="primary">Activar cámara</button>
     </form>
 </section>
 
 <section class="panel camera-preview" data-camera-preview>
     <div class="preview-copy">
         <span class="eyebrow">Vista local</span>
-        <h2>Camara en tiempo real</h2>
-        <p class="muted">Visualiza la camara de este computador antes de dejar VIGILIA monitoreando.</p>
+        <h2>Cámara en tiempo real</h2>
+        <p class="muted">Visualiza la cámara de este computador antes de dejar VigIA monitoreando.</p>
         <div class="preview-controls">
-            <select data-camera-select aria-label="Seleccionar camara"></select>
-            <button class="primary" type="button" data-camera-start>Ver camara</button>
+            <select data-camera-select aria-label="Seleccionar cámara"></select>
+            <button class="primary" type="button" data-camera-start>Ver cámara</button>
             <button class="ghost" type="button" data-camera-stop disabled>Detener</button>
         </div>
-        <small data-camera-message>El navegador pedira permiso para usar la camara.</small>
+        <small data-camera-message>El navegador pedirá permiso para usar la cámara.</small>
     </div>
     <div class="video-frame">
         <video data-camera-video autoplay playsinline muted></video>
@@ -87,7 +87,7 @@ $watcher = watcher_status();
     </div>
 
     <div class="panel">
-        <h2>Estado de camaras</h2>
+        <h2>Estado de cámaras</h2>
         <div class="camera-list">
             <?php foreach ($cameras as $camera): ?>
                 <div class="camera-row">
@@ -114,6 +114,6 @@ $watcher = watcher_status();
                 <small><?= e($sighting['camera_name']) ?> - <?= e($sighting['created_at']) ?></small>
             </a>
         <?php endforeach; ?>
-        <?php if (!$sightings): ?><p class="muted">Sin personas identificadas todavia.</p><?php endif; ?>
+        <?php if (!$sightings): ?><p class="muted">Sin personas identificadas todavía.</p><?php endif; ?>
     </div>
 </section>

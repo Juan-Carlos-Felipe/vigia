@@ -71,5 +71,5 @@ VALUES
 ON DUPLICATE KEY UPDATE email = VALUES(email);
 
 INSERT INTO cameras (name, source, location)
-VALUES ('Camara Patio Central', '0', 'Patio central')
+VALUES ('Cámara Patio Central', '0', 'Patio central')
 ON DUPLICATE KEY UPDATE source = VALUES(source);

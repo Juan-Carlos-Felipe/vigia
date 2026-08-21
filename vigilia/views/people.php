@@ -20,7 +20,7 @@ $sightings = $pdo->query(
         <h2>Nueva persona</h2>
         <label>Nombre completo <input name="full_name" required></label>
         <label>Curso o grupo <input name="course"></label>
-        <label>Telefono apoderado <input name="guardian_phone"></label>
+        <label>Teléfono apoderado <input name="guardian_phone"></label>
         <label>Foto de referencia <input name="person_photo" type="file" accept="image/*"></label>
         <input type="hidden" name="captured_photo" data-person-captured-photo>
         <div class="capture-box" data-person-capture>
@@ -31,7 +31,7 @@ $sightings = $pdo->query(
                 <button class="small" type="button" data-person-start>Usar webcam</button>
                 <button class="small" type="button" data-person-shot disabled>Capturar foto</button>
             </div>
-            <small data-person-message>Usa una foto frontal y bien iluminada para mejorar la identificacion.</small>
+            <small data-person-message>Usa una foto frontal y bien iluminada para mejorar la identificación.</small>
         </div>
         <label>Notas <textarea name="notes" rows="4"></textarea></label>
         <button class="primary">Registrar</button>
@@ -70,6 +70,6 @@ $sightings = $pdo->query(
                 <small><?= e($sighting['camera_name']) ?> - <?= e($sighting['created_at']) ?></small>
             </a>
         <?php endforeach; ?>
-        <?php if (!$sightings): ?><p class="muted">Aun no hay identificaciones.</p><?php endif; ?>
+        <?php if (!$sightings): ?><p class="muted">Aún no hay identificaciones.</p><?php endif; ?>
     </div>
 </section>

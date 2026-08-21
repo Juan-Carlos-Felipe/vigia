@@ -12,7 +12,7 @@
             <thead>
                 <tr>
                     <th>Evento</th>
-                    <th>Camara</th>
+                    <th>Cámara</th>
                     <th>Mensaje</th>
                     <th>Confianza</th>
                     <th>Captura</th>

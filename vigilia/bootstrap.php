@@ -23,7 +23,7 @@ try {
     );
 } catch (PDOException $e) {
     http_response_code(500);
-    echo '<h1>VIGILIA no pudo conectar con MySQL</h1>';
+    echo '<h1>VigIA no pudo conectar con MySQL</h1>';
     echo '<p>Importa <code>vigilia/database.sql</code> en phpMyAdmin y revisa las credenciales en <code>vigilia/bootstrap.php</code>.</p>';
     exit;
 }
@@ -185,7 +185,7 @@ function start_watcher(): void
 
     file_put_contents($statusPath, json_encode([
         'running' => true,
-        'message' => 'Vigilancia YOLO iniciada. Revisa watcher.log si la camara no abre.',
+        'message' => 'Vigilancia YOLO iniciada. Revisa watcher.log si la cámara no abre.',
         'started_at' => date('Y-m-d H:i:s'),
     ], JSON_PRETTY_PRINT));
 }

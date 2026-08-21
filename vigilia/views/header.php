@@ -5,21 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($pageTitle) ?></title>
+    <link rel="icon" href="vigilia/assets/logo_VigIA.png">
     <link rel="stylesheet" href="vigilia/assets/styles.css">
 </head>
 <body>
 <?php if ($user): ?>
     <aside class="sidebar">
         <a class="brand" href="index.php">
-            <span class="brand-mark">V</span>
-            <span>VIGILIA</span>
+            <img class="brand-logo" src="vigilia/assets/logo_VigIA.png" alt="VigIA Escolar">
         </a>
         <nav>
             <a href="index.php?route=dashboard">Panel</a>
             <a href="index.php?route=incidents">Alertas</a>
             <?php if ($user['role'] === 'admin'): ?>
                 <a href="index.php?route=people">Personas</a>
-                <a href="index.php?route=cameras">Camaras</a>
+                <a href="index.php?route=cameras">Cámaras</a>
                 <a href="index.php?route=users">Usuarios</a>
             <?php endif; ?>
         </nav>

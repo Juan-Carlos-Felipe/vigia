@@ -28,7 +28,7 @@ if (!current_user() && $route !== 'login') {
     exit;
 }
 
-$pageTitle = 'VIGILIA';
+$pageTitle = 'VigIA Escolar';
 
 include __DIR__ . '/vigilia/views/header.php';
 

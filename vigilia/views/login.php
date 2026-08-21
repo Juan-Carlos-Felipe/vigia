@@ -1,8 +1,9 @@
 <section class="login-card">
     <div>
         <span class="eyebrow">Seguridad escolar inteligente</span>
-        <h1>VIGILIA</h1>
-        <p>Monitoreo 24/7 para detectar caidas y peleas, avisando a inspectoría o enfermeria cuando cada segundo cuenta.</p>
+        <img class="login-logo" src="vigilia/assets/logo_VigIA.png" alt="VigIA Escolar">
+        <h1>VigIA Escolar</h1>
+        <p>Monitoreo 24/7 para detectar caídas y peleas, avisando a inspectoría o enfermería cuando cada segundo cuenta.</p>
     </div>
     <form method="post" action="index.php?route=login" class="panel form">
         <h2>Ingreso</h2>
