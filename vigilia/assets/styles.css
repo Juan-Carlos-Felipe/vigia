@@ -38,17 +38,19 @@ a { color: inherit; text-decoration: none; }
 .brand {
     display: flex;
     align-items: center;
-    width: 118px;
-    height: 44px;
-    overflow: hidden;
+    width: 100%;
+    min-height: 86px;
 }
 
 .brand-logo {
     display: block;
-    width: 118px;
-    height: 44px;
+    width: 100%;
+    max-width: 216px;
+    height: auto;
+    max-height: 92px;
     object-fit: contain;
     object-position: left center;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
 }
 
 nav { display: grid; gap: 8px; }
