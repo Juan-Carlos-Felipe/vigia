@@ -35,7 +35,7 @@
         <label>Ubicacion <input name="location"></label>
         <label class="check"><input name="active" type="checkbox" checked> Activa</label>
         <button class="primary">Guardar camara</button>
-        <small>Fuente puede ser 0, 1, una URL RTSP o un archivo de video.</small>
+        <small>Fuente puede set 0, 1, una URL RTSP o un archivo de video.</small>
     </form>
 
     <div class="panel">
