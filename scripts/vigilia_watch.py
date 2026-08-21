@@ -13,8 +13,8 @@ from typing import Any
 
 import cv2
 import mysql.connector
-from ultralytics import YOLO
 
+from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT_DIR = ROOT / "vigilia" / "storage" / "snapshots"
@@ -110,7 +110,9 @@ def face_similarity(first, second) -> float:
     return max(0.0, 1.0 - float(diff.mean()) / 255.0)
 
 
-def identify_person(frame, box: PersonBox, known_people: list[KnownPerson], threshold: float) -> tuple[KnownPerson, float] | None:
+def identify_person(
+    frame, box: PersonBox, known_people: list[KnownPerson], threshold: float
+) -> tuple[KnownPerson, float] | None:
     if not known_people:
         return None
 
@@ -305,7 +307,7 @@ def watch_camera(camera: dict[str, Any], args: argparse.Namespace) -> None:
                 camera,
                 "fall",
                 "critical",
-                "Posible caida detectada. Revisar de inmediato.",
+                "Possible caida detectada. Revisar de inmediato.",
                 max((box.confidence for box in boxes), default=0),
                 frame,
             )
@@ -315,7 +317,7 @@ def watch_camera(camera: dict[str, Any], args: argparse.Namespace) -> None:
                 camera,
                 "fight",
                 "high",
-                "Posible pelea o forcejeo entre personas detectado.",
+                "Possible pelea o forcejeo entre personas detectado.",
                 max((box.confidence for box in boxes), default=0),
                 frame,
             )
