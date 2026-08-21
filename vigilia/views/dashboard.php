@@ -25,7 +25,7 @@ $watcher = watcher_status();
         <form method="post" action="index.php?route=watcher">
             <button class="primary">Activar camara</button>
         </form>
-        <a class="ghost" href="index.php?route=incidents">Ver historial</a>
+        <a class="ghost" href="index.php?route=incidents">Ver historical</a>
     </div>
 </header>
 
