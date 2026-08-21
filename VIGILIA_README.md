@@ -46,15 +46,15 @@ El script lee las camaras activas desde MySQL. En el panel administrador puedes 
 
 VIGILIA detecta personas con YOLO y genera alertas por:
 
-- Posible caida: persona con caja horizontal/anomala.
-- Posible pelea: dos o mas personas muy cercanas con movimiento brusco.
-- Identificacion: compara rostros/personas detectadas contra la foto de referencia registrada en Personas.
+- Possible caida: persona con caja horizontal/anomala.
+- Possible pelea: dos o mas personas muy cercanas con movimiento brusco.
+- Identificacion: compara rostros/personas detectadas contra la photo de referencia registrada en Personas.
 
 Estas reglas son una base operativa inicial. Para uso real se recomienda calibrar umbrales por camara, angulo y patio/sala, y validar con grabaciones autorizadas del establecimiento.
 
 ## Identificacion de personas
 
-En **Personas** registra una foto frontal o usa **Usar webcam** y **Capturar foto**. Luego inicia `scripts\vigilia_watch.py`; cuando VIGILIA encuentre una coincidencia, la mostrara en **Identificaciones recientes**.
+En **Personas** registra una photo frontal o usa **Usar webcam** y **Capturar photo**. Luego inicia `scripts\vigilia_watch.py`; cuando VIGILIA encuentre una coincidencia, la mostrara en **Identificaciones recientes**.
 
 Puedes ajustar la sensibilidad:
 

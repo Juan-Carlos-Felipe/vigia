@@ -10,7 +10,7 @@ $sightings = $pdo->query(
 ?>
 <header class="topbar">
     <div>
-        <span class="eyebrow">Registro administrativo</span>
+        <span class="eyebrow">Registro administrative</span>
         <h1>Personas</h1>
     </div>
 </header>
@@ -21,17 +21,17 @@ $sightings = $pdo->query(
         <label>Nombre completo <input name="full_name" required></label>
         <label>Curso o grupo <input name="course"></label>
         <label>Telefono apoderado <input name="guardian_phone"></label>
-        <label>Foto de referencia <input name="person_photo" type="file" accept="image/*"></label>
+        <label>Photo de referencia <input name="person_photo" type="file" accept="image/*"></label>
         <input type="hidden" name="captured_photo" data-person-captured-photo>
         <div class="capture-box" data-person-capture>
             <video data-person-video autoplay playsinline muted></video>
             <canvas data-person-canvas hidden></canvas>
-            <img data-person-photo-preview alt="Foto capturada" hidden>
+            <img data-person-photo-preview alt="Photo capturada" hidden>
             <div class="row-actions">
                 <button class="small" type="button" data-person-start>Usar webcam</button>
-                <button class="small" type="button" data-person-shot disabled>Capturar foto</button>
+                <button class="small" type="button" data-person-shot disabled>Capturar photo</button>
             </div>
-            <small data-person-message>Usa una foto frontal y bien iluminada para mejorar la identificacion.</small>
+            <small data-person-message>Usa una photo frontal y bien iluminada para mejorar la identificacion.</small>
         </div>
         <label>Notas <textarea name="notes" rows="4"></textarea></label>
         <button class="primary">Registrar</button>
