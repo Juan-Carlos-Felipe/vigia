@@ -12,7 +12,7 @@
 <?php if ($user): ?>
     <aside class="sidebar">
         <a class="brand" href="index.php">
-            <img class="brand-logo" src="vigilia/assets/logo_VigIA_sidebar_original.png?v=1" alt="VigIA Escolar">
+            <img class="brand-logo" src="vigilia/assets/logo_VigIA_sidebar_original.png?v=2" alt="VigIA Escolar">
         </a>
         <nav>
             <a href="index.php?route=dashboard">Panel</a>
