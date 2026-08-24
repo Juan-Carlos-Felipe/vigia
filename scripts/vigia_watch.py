@@ -1,4 +1,4 @@
-"""VIGILIA 24/7 camera watcher powered by the local Ultralytics YOLO API."""
+"""VigIA 24/7 camera watcher powered by the local Ultralytics YOLO API."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from ultralytics import YOLO
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SNAPSHOT_DIR = ROOT / "vigilia" / "storage" / "snapshots"
+SNAPSHOT_DIR = ROOT / "vigia" / "storage" / "snapshots"
 FACE_CASCADE = cv2.CascadeClassifier(str(Path(cv2.data.haarcascades) / "haarcascade_frontalface_default.xml"))
 
 
@@ -45,10 +45,10 @@ class KnownPerson:
 
 def db_config() -> dict[str, Any]:
     return {
-        "host": os.getenv("VIGILIA_DB_HOST", "127.0.0.1"),
-        "database": os.getenv("VIGILIA_DB_NAME", "vigilia"),
-        "user": os.getenv("VIGILIA_DB_USER", "root"),
-        "password": os.getenv("VIGILIA_DB_PASS", ""),
+        "host": os.getenv("VIGIA_DB_HOST", "127.0.0.1"),
+        "database": os.getenv("VIGIA_DB_NAME", "vigia"),
+        "user": os.getenv("VIGIA_DB_USER", "root"),
+        "password": os.getenv("VIGIA_DB_PASS", ""),
     }
 
 
@@ -325,8 +325,8 @@ def watch_camera(camera: dict[str, Any], args: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="VIGILIA YOLO watcher")
-    parser.add_argument("--model", default=os.getenv("VIGILIA_YOLO_MODEL", "yolo26n.pt"))
+    parser = argparse.ArgumentParser(description="VigIA YOLO watcher")
+    parser.add_argument("--model", default=os.getenv("VIGIA_YOLO_MODEL", "yolo26n.pt"))
     parser.add_argument("--confidence", type=float, default=0.35)
     parser.add_argument("--frame-stride", type=int, default=3)
     parser.add_argument("--cooldown", type=int, default=45)

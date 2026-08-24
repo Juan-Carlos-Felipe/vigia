@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 session_start();
 
-define('VIGILIA_DB_HOST', getenv('VIGILIA_DB_HOST') ?: '127.0.0.1');
-define('VIGILIA_DB_NAME', getenv('VIGILIA_DB_NAME') ?: 'vigilia');
-define('VIGILIA_DB_USER', getenv('VIGILIA_DB_USER') ?: 'root');
-define('VIGILIA_DB_PASS', getenv('VIGILIA_DB_PASS') ?: '');
+define('VIGIA_DB_HOST', getenv('VIGIA_DB_HOST') ?: '127.0.0.1');
+define('VIGIA_DB_NAME', getenv('VIGIA_DB_NAME') ?: 'vigia');
+define('VIGIA_DB_USER', getenv('VIGIA_DB_USER') ?: 'root');
+define('VIGIA_DB_PASS', getenv('VIGIA_DB_PASS') ?: '');
 
 date_default_timezone_set('America/Santiago');
 
 try {
     $pdo = new PDO(
-        'mysql:host=' . VIGILIA_DB_HOST . ';dbname=' . VIGILIA_DB_NAME . ';charset=utf8mb4',
-        VIGILIA_DB_USER,
-        VIGILIA_DB_PASS,
+        'mysql:host=' . VIGIA_DB_HOST . ';dbname=' . VIGIA_DB_NAME . ';charset=utf8mb4',
+        VIGIA_DB_USER,
+        VIGIA_DB_PASS,
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -24,7 +24,7 @@ try {
 } catch (PDOException $e) {
     http_response_code(500);
     echo '<h1>VigIA no pudo conectar con MySQL</h1>';
-    echo '<p>Importa <code>vigilia/database.sql</code> en phpMyAdmin y revisa las credenciales en <code>vigilia/bootstrap.php</code>.</p>';
+    echo '<p>Importa <code>vigia/database.sql</code> en phpMyAdmin y revisa las credenciales en <code>vigia/bootstrap.php</code>.</p>';
     exit;
 }
 
@@ -119,7 +119,7 @@ function save_person_photo(array $files, ?string $capturedPhoto): ?string
         if ($raw !== false) {
             $filename = 'person_' . date('Ymd_His') . '_' . bin2hex(random_bytes(3)) . '.jpg';
             file_put_contents($storage . '/' . $filename, $raw);
-            return 'vigilia/storage/people/' . $filename;
+            return 'vigia/storage/people/' . $filename;
         }
     }
 
@@ -131,7 +131,7 @@ function save_person_photo(array $files, ?string $capturedPhoto): ?string
 
         $filename = 'person_' . date('Ymd_His') . '_' . bin2hex(random_bytes(3)) . '.' . $extension;
         move_uploaded_file($files['person_photo']['tmp_name'], $storage . '/' . $filename);
-        return 'vigilia/storage/people/' . $filename;
+        return 'vigia/storage/people/' . $filename;
     }
 
     return null;
@@ -155,11 +155,11 @@ function watcher_status(): array
 function start_watcher(): void
 {
     $root = dirname(__DIR__);
-    $script = $root . DIRECTORY_SEPARATOR . 'scripts' . DIRECTORY_SEPARATOR . 'vigilia_watch.py';
+    $script = $root . DIRECTORY_SEPARATOR . 'scripts' . DIRECTORY_SEPARATOR . 'vigia_watch.py';
     $storage = __DIR__ . DIRECTORY_SEPARATOR . 'storage';
     $log = $storage . DIRECTORY_SEPARATOR . 'watcher.log';
     $statusPath = $storage . DIRECTORY_SEPARATOR . 'watcher-status.json';
-    $python = getenv('VIGILIA_PYTHON') ?: 'python';
+    $python = getenv('VIGIA_PYTHON') ?: 'python';
 
     if (!is_dir($storage)) {
         mkdir($storage, 0775, true);

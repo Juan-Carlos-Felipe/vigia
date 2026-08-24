@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($pageTitle) ?></title>
-    <link rel="icon" href="vigilia/assets/logo_VigIA.png?v=2">
-    <link rel="stylesheet" href="vigilia/assets/styles.css?v=4">
+    <link rel="icon" href="vigia/assets/logo_VigIA.png?v=2">
+    <link rel="stylesheet" href="vigia/assets/styles.css?v=4">
 </head>
 <body>
 <?php if ($user): ?>
     <aside class="sidebar">
         <a class="brand" href="index.php">
-            <img class="brand-logo" src="vigilia/assets/logo_VigIA_sidebar_original.png?v=2" alt="VigIA Escolar">
+            <img class="brand-logo" src="vigia/assets/logo_VigIA_sidebar_original.png?v=2" alt="VigIA Escolar">
         </a>
         <nav>
             <a href="index.php?route=dashboard">Panel</a>

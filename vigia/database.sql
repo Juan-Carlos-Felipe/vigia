@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS vigilia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE vigilia;
+CREATE DATABASE IF NOT EXISTS vigia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE vigia;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS sightings (
 
 INSERT INTO users (name, email, role, password_hash)
 VALUES
-    ('Administrador VIGILIA', 'admin@vigilia.local', 'admin', '$2y$10$QeIdg8bpOCBJlaJiRILS8ezPLRnp4n8/kP9aSG3FRozThw0gkPB2O'),
-    ('Inspector General', 'inspector@vigilia.local', 'inspector', '$2y$10$kHWguIhcfX9tLJ8fluB0Au6ZGVwyZI2F/LTl./Hmt5nkwWWwwbbGi')
+    ('Administrador VigIA', 'admin@vigia.local', 'admin', '$2y$10$QeIdg8bpOCBJlaJiRILS8ezPLRnp4n8/kP9aSG3FRozThw0gkPB2O'),
+    ('Inspector General', 'inspector@vigia.local', 'inspector', '$2y$10$kHWguIhcfX9tLJ8fluB0Au6ZGVwyZI2F/LTl./Hmt5nkwWWwwbbGi')
 ON DUPLICATE KEY UPDATE email = VALUES(email);
 
 INSERT INTO cameras (name, source, location)

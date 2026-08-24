@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/vigilia/bootstrap.php';
+require __DIR__ . '/vigia/bootstrap.php';
 
 $route = $_GET['route'] ?? 'dashboard';
 
@@ -30,30 +30,30 @@ if (!current_user() && $route !== 'login') {
 
 $pageTitle = 'VigIA Escolar';
 
-include __DIR__ . '/vigilia/views/header.php';
+include __DIR__ . '/vigia/views/header.php';
 
 switch ($route) {
     case 'login':
-        include __DIR__ . '/vigilia/views/login.php';
+        include __DIR__ . '/vigia/views/login.php';
         break;
     case 'people':
         require_role(['admin']);
-        include __DIR__ . '/vigilia/views/people.php';
+        include __DIR__ . '/vigia/views/people.php';
         break;
     case 'users':
         require_role(['admin']);
-        include __DIR__ . '/vigilia/views/users.php';
+        include __DIR__ . '/vigia/views/users.php';
         break;
     case 'cameras':
         require_role(['admin']);
-        include __DIR__ . '/vigilia/views/cameras.php';
+        include __DIR__ . '/vigia/views/cameras.php';
         break;
     case 'incidents':
-        include __DIR__ . '/vigilia/views/incidents.php';
+        include __DIR__ . '/vigia/views/incidents.php';
         break;
     default:
-        include __DIR__ . '/vigilia/views/dashboard.php';
+        include __DIR__ . '/vigia/views/dashboard.php';
         break;
 }
 
-include __DIR__ . '/vigilia/views/footer.php';
+include __DIR__ . '/vigia/views/footer.php';
